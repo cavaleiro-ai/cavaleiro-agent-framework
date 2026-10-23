@@ -1,0 +1,120 @@
+name: "\U0001F41B Bug Report"
+description: Report a bug in Cavaleiro Agent Framework. Report security issues privately (see below).
+title: "[Bug]: "
+labels: ["bug", "triage"]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Please **do not** paste secrets, API keys, tokens, private URLs, or proprietary code.
+
+        Security issues must be reported privately. See [SECURITY.md](https://github.com/cavaleiro-ai/cavaleiro-agent-framework/blob/main/SECURITY.md).
+
+        Before submitting, check whether the issue has already been reported or fixed:
+
+        * [Changelog](https://github.com/cavaleiro-ai/cavaleiro-agent-framework/blob/main/CHANGELOG.md)
+        * [Existing issues](https://github.com/cavaleiro-ai/cavaleiro-agent-framework/issues)
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checklist
+      description: Please confirm and check all the following options.
+      options:
+        - label: This is a bug, not a usage question.
+          required: true
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I posted a self-contained, minimal, reproducible example that a maintainer can copy and run as is.
+          required: true
+        - label: I removed secrets, tokens, and private data from this report.
+          required: true
+  - type: checkboxes
+    id: package
+    attributes:
+      label: Package (Required)
+      description: |
+        Which package(s) is this bug related to? Select at least one. Package names are unchanged from the original project (the distribution and import names are still `langchain-core` / `langchain_core`, and so on).
+      options:
+        - label: langchain
+        - label: langchain-openai
+        - label: langchain-anthropic
+        - label: langchain-classic
+        - label: langchain-core
+        - label: langchain-model-profiles
+        - label: langchain-tests
+        - label: langchain-text-splitters
+        - label: langchain-chroma
+        - label: langchain-deepseek
+        - label: langchain-exa
+        - label: langchain-fireworks
+        - label: langchain-groq
+        - label: langchain-huggingface
+        - label: langchain-mistralai
+        - label: langchain-nomic
+        - label: langchain-ollama
+        - label: langchain-openrouter
+        - label: langchain-perplexity
+        - label: langchain-qdrant
+        - label: langchain-typesafe
+        - label: langchain-xai
+        - label: Other / not sure / general
+  - type: textarea
+    id: related
+    attributes:
+      label: Related issues / PRs
+      description: Links to related issues or pull requests.
+      placeholder: |
+        * e.g. #123
+    validations:
+      required: false
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps / example code (Python)
+      description: |
+        A self-contained, [minimal, reproducible example](https://stackoverflow.com/help/minimal-reproducible-example). Avoid screenshots so others can copy and paste the code.
+
+        (This is automatically formatted as code, so there is no need for backticks.)
+      render: python
+      placeholder: |
+        from langchain_core.runnables import RunnableLambda
+
+        def bad_code(inputs) -> int:
+            raise NotImplementedError("For demo purpose")
+
+        chain = RunnableLambda(bad_code)
+        chain.invoke("Hello!")
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message and stack trace (if applicable)
+      description: The full error message and stack trace. Redact anything sensitive.
+      render: shell
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What you are doing, what you expect to happen, and what happens instead.
+      placeholder: |
+        * I'm trying to use `langchain_core` to do X.
+        * I expect to see Y.
+        * Instead, it does Z.
+    validations:
+      required: true
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System info
+      description: |
+        Run the following command and paste the output here:
+
+        `python -m langchain_core.sys_info`
+
+        Also mention your operating system (Windows, macOS, or Linux) and the Cavaleiro Agent Framework commit or release.
+      placeholder: |
+        python -m langchain_core.sys_info
+    validations:
+      required: true

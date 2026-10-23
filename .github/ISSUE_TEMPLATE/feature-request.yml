@@ -1,0 +1,85 @@
+name: "✨ Feature Request"
+description: Suggest an improvement or a new feature for Cavaleiro Agent Framework.
+title: "[Improvement]: "
+labels: ["enhancement", "triage"]
+type: feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Good proposals describe a **real problem** first, then the smallest change that solves it.
+
+        Cavaleiro Agent Framework keeps the original package and import names for compatibility, so changes to public APIs need a strong reason.
+
+        **Note:** please wait for a maintainer to agree on the approach before you start a large pull request.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checklist
+      description: Please confirm and check all the following options.
+      options:
+        - label: This is a feature request, not a bug report or usage question.
+          required: true
+        - label: I searched existing issues and didn't find a similar request.
+          required: true
+  - type: checkboxes
+    id: package
+    attributes:
+      label: Package (Required)
+      description: Which package(s) is this request related to? Select at least one.
+      options:
+        - label: langchain
+        - label: langchain-openai
+        - label: langchain-anthropic
+        - label: langchain-classic
+        - label: langchain-core
+        - label: langchain-model-profiles
+        - label: langchain-tests
+        - label: langchain-text-splitters
+        - label: langchain-chroma
+        - label: langchain-deepseek
+        - label: langchain-exa
+        - label: langchain-fireworks
+        - label: langchain-groq
+        - label: langchain-huggingface
+        - label: langchain-mistralai
+        - label: langchain-nomic
+        - label: langchain-ollama
+        - label: langchain-openrouter
+        - label: langchain-perplexity
+        - label: langchain-qdrant
+        - label: langchain-typesafe
+        - label: langchain-xai
+        - label: Other / not sure / general
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is hard, confusing, slow, or risky today? Who hits it, and when?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: The smallest change that would solve it. Name the modules or files you expect to touch, and say whether a public API changes.
+      placeholder: |
+        The API could look like...
+
+        ```python
+        # Example of how the feature might work
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches, including "do nothing", and why they are worse.
+  - type: textarea
+    id: verification
+    attributes:
+      label: How would we verify it?
+      description: The unit test, command, or observable behavior that proves the change works. Unit tests must run without network access or API keys.
+    validations:
+      required: true

@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+version: 2.1
+contact_links:
+  - name: Report a security vulnerability (private)
+    url: https://github.com/cavaleiro-ai/cavaleiro-agent-framework/security/advisories/new
+    about: Please report vulnerabilities privately, never in a public issue.
+  - name: Read the contributing guide
+    url: https://github.com/cavaleiro-ai/cavaleiro-agent-framework/blob/main/CONTRIBUTING.md
+    about: How to set up the packages, run the tests, and propose changes.
